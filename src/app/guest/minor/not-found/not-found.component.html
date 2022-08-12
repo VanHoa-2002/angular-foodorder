@@ -1,0 +1,5 @@
+<div *ngIf="visible" class="not-found">
+    <img :src="{{image_notfound}}" alt="">
+    <p>{{notFoundMessage}}</p>        
+    <a class="btn btn-danger" [routerLink]="resetLinkRoute">{{resetLinkText}}</a>
+</div>

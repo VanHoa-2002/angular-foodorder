@@ -1,0 +1,79 @@
+<!-- <ul *ngFor="let u of listOrder.items">
+  <li>{{u.food.id}}</li>
+  <li>{{u.food.name}}</li>
+  <li>{{u.food.price}}</li>
+  <li>{{u.food.favorite}}</li>
+  <li>{{u.food.imageUrl}}</li>
+  <li>{{u.food.cookTime}}</li>
+</ul> -->
+<div class="container">
+  <table border="" class="table table-striped mt-2">
+      <thead>
+          <tr align="center" class="table-secondary">
+              <th>#</th>
+              <th>Customer Name</th>
+              <th>Customer Email</th>
+              <th>Customer Address</th>
+              <th>Payment Method</th>
+              <th>Total cost</th>
+          </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let u of listOrder">
+            
+            <tr align="center" >
+                  <td class="showDetail" (click)="u.showChild=!u.showChild">{{u.id}}</td>
+                  <td> {{u.customer.customerName}}</td>
+                  <td> {{u.customer.customerEmail}}</td>
+                  <td> {{u.customer.customerAddress}}</td>
+                  <td> {{u.payment}}</td>
+                  <td> {{u.totalAmount |currency}}</td>
+                  <!-- <td> {{u.food.price}}</td> -->
+              
+                 <!-- <td> {{listOrder.customer.customerName}}</td> -->
+                <!-- <td> {{u.food.origins}}</td>
+                <td> {{u.food.tags}}</td>  -->
+                <!-- <td> -->
+                    <!-- <img width="150" height="100" src="{{u.food.imageUrl}}" alt="food images"> -->
+                <!-- </td> -->
+                <!-- <td colspan="2">
+                    <button  class="btn btn-outline-danger"><i class="fas fa-trash"></i></button>&nbsp;
+                    <a class="btn btn-outline-primary" routerLink = "edit/"><i class="far fa-edit"></i></a>
+                </td> -->
+            </tr>
+            <tr *ngIf="u.showChild">
+              <td colspan="8">
+                  <table class="table table-bordered">
+                      <thead align="center" class="table-dark">
+                          <tr>
+                              <td>#</td>
+                              <td>Image</td>
+                              <td>Name </td>
+                              <td>Price</td>
+                              <td>Quantity</td>
+                              <td>Origins</td>
+                              <td>CookTime</td>
+                              <td>Tags</td>
+                              <td>Stars</td>
+                          </tr>
+                      </thead>
+                      <tbody align="center">
+                          <tr *ngFor="let product of u.carts; let i = index">
+                              <td>{{i+1}}</td>
+                              <td>
+                                  <img [src]="product.food.imageUrl" width="150px">
+                              </td>
+                              <td>{{product.food.name}} </td>
+                              <td>{{product.food.price | currency}} </td>
+                              <td> x{{product.quantity}} <i class="fas fa-box"></i></td>
+                              <td>{{product.food.origins}} </td>
+                              <td>{{product.food.cookTime}} Minutes </td>
+                              <td>{{product.food.tags}} </td>
+                              <td>{{product.food.stars}} ★ </td>
+                          </tr>
+                      </tbody>
+                  </table>
+        </ng-container>
+      </tbody>
+  </table>
+</div>

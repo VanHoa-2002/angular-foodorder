@@ -1,0 +1,81 @@
+<div class="container">
+    <h2 align="center">Add product form</h2>
+    <form [formGroup]="formValue">
+      <!-- <div class="form-group row mt-2">
+            <label for="staticEmail" class="col-sm-2 col-form-label">Product Id</label>
+            <div class="col-sm-10">
+              <input type="number"  name="id" formControlName="id" class="form-control" id="name" placeholder="Product Id" >
+            </div>
+          </div> -->
+      <div class="form-group row mt-2">
+        <label for="staticEmail" class="col-sm-2 col-form-label">Product Name</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" formControlName="name" name="name" placeholder="Product Name">
+          <small style="color: red;" *ngIf="formValue.get('name')?.invalid && formValue.get('name')?.touched">Name is
+            required</small>
+        </div>
+      </div>
+      <div class="form-group row mt-2">
+        <label for="staticEmail" class="col-sm-2 col-form-label">Product Price</label>
+        <div class="col-sm-10">
+          <input type="number" class="form-control" formControlName="price" name="price" placeholder="Product Price">
+          <small style="color: red;" *ngIf="formValue.get('price')?.invalid && formValue.get('price')?.touched">Price is
+            required</small>
+        </div>
+      </div>
+      <div class="form-group row mt-2">
+        <label for="staticEmail" class="col-sm-2 col-form-label">Cook Time</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" formControlName="cookTime" name="cookTime"
+            placeholder="Product Cook Time">
+          <small style="color: red;" *ngIf="formValue.get('cookTime')?.invalid && formValue.get('cookTime')?.touched">Cook time is
+            required</small>
+        </div>
+      </div>
+      <div class="form-group row mt-2">
+        <label for="staticEmail" class="col-sm-2 col-form-label">Product Star</label>
+        <div class="col-sm-10">
+          <input type="number" class="form-control" formControlName="stars" name="stars" placeholder="Product Star">
+          <small style="color: red;" *ngIf="formValue.get('stars')?.invalid && formValue.get('stars')?.touched">Star is
+            required</small>
+        </div>
+      </div>
+      <div class="form-group row mt-2">
+        <label for="staticEmail" class="col-sm-2 col-form-label">Origins</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" formControlName="origins" name="origins" placeholder="Product Origins">
+          <small style="color: red;" *ngIf="formValue.get('origins')?.invalid && formValue.get('origins')?.touched">Origin is
+            required</small>
+        </div>
+      </div>
+      <div class="form-group row mt-2">
+        <label for="staticEmail" class="col-sm-2 col-form-label">Product Tags</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" formControlName="tags" name="tags" placeholder="Product Tags">
+          <small style="color: red;" *ngIf="formValue.get('tags')?.invalid && formValue.get('tags')?.touched">Tag is
+            required</small>
+        </div>
+      </div>
+      <div class="form-group row mt-2">
+        <label for="staticEmail" class="col-sm-2 col-form-label">Product Image</label>
+        <div class="col-sm-10">
+          <input type="file" class="form-control" (change)="onFileSelected($event)" name="imageUrl"
+            placeholder="Product Image">
+        </div>
+      </div>
+      <div class="form-group row mt-2">
+        <label for="staticEmail" class="col-sm-2 col-form-label">Preview Image</label>
+        <div class="col-sm-10">
+          <img style="width: 200px;" [src]="fileSelect" alt="Preview">
+        </div>
+      </div>
+      <div class="form-group row mt-2">
+        <div class="col-sm-5"></div>
+        <button type="button" (click)="onSubmit()" [disabled]="formValue.invalid"
+          class="btn btn-primary col-sm-2">Save</button>
+        <div class="col-sm-5"></div>
+      </div>
+  
+    </form>
+  </div>
+  

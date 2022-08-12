@@ -1,0 +1,17 @@
+.not-found{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+    flex-direction: column;
+}
+.not-found img {
+    height: 350px;
+}
+div>a{
+    color: rgb(252, 244, 244);
+    opacity: 0.7;
+}
+div>a:hover{
+    opacity: 1;
+}

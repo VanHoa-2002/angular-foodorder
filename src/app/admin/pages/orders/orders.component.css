@@ -1,0 +1,7 @@
+.showDetail{
+    cursor: pointer;
+}
+.showDetail:hover{
+    color: orangered;
+    text-decoration: underline;
+}

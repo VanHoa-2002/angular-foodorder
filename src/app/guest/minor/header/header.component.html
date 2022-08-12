@@ -1,0 +1,21 @@
+<header>
+    <div class="container">
+        <a routerLink="/guest/" class="logo">Zen Fast Food</a>
+        <nav>
+            <ul>
+                <li *ngIf="userInfo">
+                    <a routerLink="/guest">Hello {{this.userInfo.fullname}}</a>
+                  </li>
+                  <li class="menu-container">
+                    <a routerLink="/dashboard">Testy Codeiz</a>
+                    <div class="menu">
+                      <a routerLink="/guest/profile">Profile</a>
+                      <a [routerLink]="['/admin']">Orders</a>
+                      <a (click)="logout()">Logout</a>
+                    </div>
+                  </li>
+                <li><a routerLink="/guest/cart-page">Cart <span>{{cartQuantity}}</span></a></li>
+            </ul>
+        </nav>  
+    </div>
+</header>

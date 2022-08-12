@@ -1,0 +1,35 @@
+<div class="container">
+    <table border="" class="table table-striped mt-2">
+        <thead>
+            <tr align="center" class="table-secondary">
+                <th>#</th>
+                <th>Name</th>
+                <th>Cook time</th>
+                <th>Price</th>
+                <th>stars</th>
+                <th>Origins</th>
+                <th>Tags</th>
+                <th>Image</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr  *ngFor="let food of foods">
+                <td> {{food.id}}</td>
+                <td> {{food.name}}</td>
+                <td> {{food.cookTime}}</td>
+                <td> {{food.price}}</td>
+                <td> {{food.stars}}</td>
+                <td> {{food.origins}}</td>
+                <td> {{food.tags}}</td>
+                <td>
+                    <img width="150" height="100" src="{{food.imageUrl}}" alt="food images">
+                </td>
+                <td colspan="2">
+                    <button (click)="deleteProduct(this.food.id)" class="btn btn-outline-danger"><i class="fas fa-trash"></i></button>&nbsp;
+                    <a class="btn btn-outline-primary" routerLink = "edit/{{this.food.id}}"><i class="far fa-edit"></i></a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

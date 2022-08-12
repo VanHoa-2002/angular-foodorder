@@ -1,0 +1,25 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="background">
+                <div class="shape"></div>
+                <div class="shape"></div>
+            </div>
+            <form [formGroup]="loginAdminForm" (ngSubmit)="onSubmit()">
+                <h3 class="design">Login Admin Account Here</h3>
+            
+                <label class="design" for="email">Email</label>
+                <input  class="design" formControlName="email" type="text" placeholder="Admin Email" id="email">
+            
+                <label class="design" for="password">Password</label>
+                <input class="design" formControlName="password" type="password" placeholder="Password" id="password">
+            
+                <button class="design" type="submit" style="color: aliceblue;">Login</button>
+                <div  class="design"class="social">
+                <div class="go"><i class="fab fa-google"></i>Google</div>
+                <div class="fb"><i class="fa-brands fa-facebook"></i> Facebook</div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
